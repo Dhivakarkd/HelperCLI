@@ -2,10 +2,11 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.0'
 	id 'io.spring.dependency-management' version '1.1.0'
+//	id 'org.graalvm.buildtools.native' version '0.9.16'
 }
 
 group = 'com.dhivakar'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '17'
 
 repositories {
@@ -33,3 +34,16 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+	//To disable generation of plain jar
+	enabled = false
+}
+
+/*
+graalvmNative {
+	metadataRepository {
+		enabled = true
+	}
+}
+*/
